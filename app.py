@@ -4,6 +4,7 @@ from flask_login import LoginManager
 import os
 from models import db
 
+
 def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "secret-key-goes-here"
@@ -34,7 +35,6 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     return app
-
 
 
 app = create_app()
