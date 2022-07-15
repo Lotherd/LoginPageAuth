@@ -37,11 +37,15 @@ def create_app():
 
     app.register_blueprint(main_blueprint)
 
-    if __name__ == "__main__":
-        app.run(
-            host=os.getenv("IP", "0.0.0.0"),
-            port=int(os.getenv("PORT", 5050)),
-            debug=True,
-        )
-
     return app
+
+
+app = create_app()
+
+if __name__ == "__main__":
+
+    app.run(
+        host=os.getenv("IP", "0.0.0.0"),
+        port=int(os.getenv("PORT", 5050)),
+        debug=True,
+    )
